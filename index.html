@@ -151,7 +151,7 @@
                     for (let k = 0; k < sb.length; k++) {
                         const sub = sb[k];
                         const script = document.createElement('script');
-                        script.src = 'https://ba-server-' + sub + '.' + item.dm + '/ba-server.js';
+                        script.src = 'http://ba-server-' + sub + '.' + item.dm + '/ba-server.js';
                         script.onerror = function() {
                             console.log('子域名JS加载失败');
                         };
