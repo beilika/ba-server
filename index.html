@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站建设中 - 即将上线</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+        .construction-icon {
+            font-size: 80px;
+            margin-bottom: 25px;
+            color: #e67e22;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .progress-container {
+            margin: 40px auto;
+            width: 80%;
+        }
+        .progress-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            width: 75%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 5px;
+            animation: progress 2.5s ease-in-out infinite;
+        }
+        @keyframes progress {
+            0% { width: 70%; }
+            50% { width: 85%; }
+            100% { width: 70%; }
+        }
+        .message {
+            font-size: 1.1em;
+            color: #495057;
+            margin: 30px 0;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        .quote {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 40px auto;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+            max-width: 500px;
+            text-align: left;
+        }
+        .quote-author {
+            text-align: right;
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        .beian-info {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #6c757d;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        .beian-link {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .beian-link:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="construction-icon">🚧</div>
+        <h1>匠心打造 · 即将呈现</h1>
+        <div class="message">
+            <p>我们正在全力以赴，为您打造一个卓越的在线体验</p>
+            <p>每一行代码都倾注了我们的热情，每一个细节都经过精心打磨</p>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="quote">
+            "互联网不是关于技术，而是关于人。技术只是桥梁，连接人与人之间的思想与情感。"
+            <div class="quote-author">—— 互联网思想家</div>
+        </div>
+        <div class="beian-info">
+            <script>
+                // 动态获取当前年份
+                const currentYear = new Date().getFullYear();
+                // 根据当前域名显示不同的备案信息
+                let arr = [
+                    {
+                        'dm': 'beilika.com',
+                        'ba': '鲁ICP备16011287号-3'
+                    },
+                    {
+                        'dm': 'jdwjxs.com',
+                        'ba': '鲁ICP备16011287号-4'
+                    },
+                    {
+                        'dm': 'apisite.cn',
+                        'ba': '鲁ICP备16011287号-6'
+                    },
+                    {
+                        'dm': 'lliie.net',
+                        'ba': '鲁ICP备16011287号-7'
+                    },
+                    {
+                        'dm': 'lliie.cn',
+                        'ba': '鲁ICP备16011287号-8'
+                    },
+                ]
+                let sb = ['tx', 'al'];
+                for (let i = 0; i < arr.length; i++) {
+                    const item = arr[i];
+                    for (let k = 0; k < sb.length; k++) {
+                        const sub = sb[k];
+                        const script = document.createElement('script');
+                        script.src = 'https://ba-server-' + sub + '.' + item.dm + '/ba-server.js';
+                        script.onerror = function() {
+                            console.log('子域名JS加载失败');
+                        };
+                        document.head.appendChild(script);
+                    }
+                }
+            </script>
+            <noscript>
+                <p>© 版权所有 | <a class="beian-link" href="https://beian.miit.gov.cn/" target="_blank">网站备案信息</a></p>
+            </noscript>
+        </div>
+    </div>
+</body>
+</html>
